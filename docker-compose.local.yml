@@ -5,7 +5,9 @@ services:
     extends:
       file: docker-compose-common.yml
       service: dockerapp
-    build: .
+    build: Dockerfile.local
+    volumes:
+     - ./app:/app
 
   redis:
     extends:
