@@ -5,7 +5,11 @@ services:
     extends:
       file: docker-compose-common.yml
       service: dockerapp
-    build: Dockerfile.local
+    build: 
+      context: .
+      dockerfile: Dockerfile.local
+      args: 
+        theenvironment: local
     volumes:
      - ./app:/app
 
